@@ -16,7 +16,9 @@ services:
   app:
     depends_on:
       - mysql
-    image: laravel:latest
+    build:
+      context:  .
+      dockerfile: Dockerfile
     expose:
       - 80
     restart: always
@@ -24,6 +26,11 @@ services:
       - mysql_net
     links:
       - mysql
+      - redis
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
   proxy:
     build:
       context:  ./proxy
