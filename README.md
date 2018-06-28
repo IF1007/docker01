@@ -18,7 +18,7 @@ Neste repositório constam todos os arquivos necessários para levantamento do a
     - **Dockerfile** - Arquivo para criação da imagem do proxy.
     - **nginx.conf** - Arquivo com as configurações necessárias para o proxy.
 - **.env** - Arquivo contendo todas as variaveis necessárias para a aplicação.
-- **docker-compose** - Arquivo yml que contém todas as configurações para setup da aplicação e seus ambiente.
+- **docker-compose** - Arquivo yml que contém todas as configurações para setup da aplicação e seu ambiente.
 - **Dockerfile** - Arquivo responsável por gerar a imagem da aplicação em laravel utilizado no projeto
 
 ### Iniciando a aplicação
@@ -40,9 +40,9 @@ sudo docker exec -it docker_app_1 php artisan migrate
 ```shell
 sudo docker exec -it docker_app_1 php artisan db:seed
 ```
-OBS: Será necessário criar exatamente 5 réplicas da aplicação pelo fato do proxy estar esperando exatamente 5 replicas, caso queria alterar o número de réplicas basta ir também no arquivo **proxy/nginx.conf** e no *upstream app_servers* ajustar a quantidade de servidores e seus números para a quatidade de réplicas que irá utilizar.
+**OBS:** Será necessário criar exatamente 5 réplicas da aplicação pelo fato do proxy estar esperando exatamente 5 replicas, caso queira alterar o número de réplicas basta ir no arquivo **proxy/nginx.conf** e no *upstream app_servers* ajustar a quantidade de servidores e seus números para a quatidade de réplicas que irá utilizar.
 
-OBS2: Não criei imagens no Dockerhub para utilizar apenas imagens local com isso tanto a imagem do proxy quanto a imagem da aplicação serão geradas localmente assim que iniciar o ambiente e a aplicação através do *docker-compose*.
+**OBS2:** Não criei imagens no Dockerhub para utilizar apenas imagens local com isso tanto a imagem do proxy quanto a imagem da aplicação serão geradas localmente assim que iniciar o ambiente e a aplicação através do *docker-compose*.
 
 ### Fontes
 - Docker: https://docs.docker.com
