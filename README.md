@@ -54,5 +54,5 @@ sudo docker exec -it docker_app_1 php artisan db:seed
 - Nginx as a Load balancing/proxy: http://nginx.org/en/docs/http/load_balancing.html
 
 ### Arquitetura do ambiente
-A imagem a abixo mostra como o ambiente para aplicação está arquitetado.
+A imagem abixo mostra como o ambiente para aplicação está arquitetado.
 ![arquitetura](/arquitetura.png)
