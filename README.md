@@ -1,6 +1,6 @@
-# Respoitório Docker da [API em laravel](https://github.com/jbsn94/laravel-horarioaulas.git)
+# Docker para a [API em laravel](https://github.com/jbsn94/laravel-horarioaulas.git)
 
-Neste repositório constam todos os arquivos necessários para levantamento do ambiente para rodar a aplicação e suas dependências utilizando docker.
+Neste repositório constam todos os arquivos necessários para iniciar a aplicação e seu ambiente necessário para rodar.
 
 ### Criado por:
 
@@ -11,7 +11,7 @@ Neste repositório constam todos os arquivos necessários para levantamento do a
 * [Docker-compose](https://docs.docker.com/compose/install/#install-compose)
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-### Arquivos/pastas
+### Mapa do repositório
 - **nginx** - Pasta contendo arquivos de configuração do nginx
     - **default** - arquivo com as configurações necessárias para o nginx da aplicação
 - **proxy** - Pasta para a criação da imagem do *load balancing/proxy* para a aplicação.
