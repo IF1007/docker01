@@ -53,6 +53,6 @@ sudo docker exec -it docker_app_1 php artisan db:seed
 - Redis: https://hub.docker.com/_/redis/
 - Nginx as a Load balancing/proxy: http://nginx.org/en/docs/http/load_balancing.html
 
-### Arquitetura do ambiente
+### Arquitetura
 A imagem abixo mostra como o ambiente para aplicação está arquitetado.
 ![arquitetura](/arquitetura.png)
