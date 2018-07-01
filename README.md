@@ -45,7 +45,9 @@ sudo docker exec -it docker_auth_1 php artisan migrate
 ```shell
 sudo docker exec -it docker_app_1 php artisan db:seed
 ```
-Para que tudo funcione corretamente será necessário criar dois *dns* local no arquivos de hosts do seu sistema operacional setando para o ip da maquina hoster do docker, os **dns** deverão ser exatamente esses: **api.local.com** e **local.com**, ambos devem apontar para o IP da maquina hoster do docker, caso queira alterar a quantidade de replicas e bem como o dns do proxy basta ir na pasta *proxy* e alterar no arquivo *nginx.conf* a quantidade de *worker_processes* para a quantidade de replicas que serão adicionadas no *upstream* de ambos, já para alterar o *dns* de cada basta altera o *server_name* de cada server.
+
+### ATENÇÂO
+Como ambos os serviços estão sendo levantados em um mesmo *Docker hoster* será necessário adicionar dois **dns** em seu arquivo de hoster para o IP do *Docker hoster*, ambos os dns são: **local.com** e **api.local.com**, para ambos utilize o mesmo ip da maquina que está com o docker instalado, essa modificação é necessário para o *proxy* funcione corretamente e redirecione a requisição para o container adequado.
 
 ### Fontes
 - Docker: https://docs.docker.com
