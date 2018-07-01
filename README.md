@@ -24,7 +24,6 @@ Neste repositório constam todos os arquivos necessários para iniciar a aplica�
     - **Dockerfile** - Arquivo para criação da imagem do proxy.
     - **nginx.conf** - Arquivo com as configurações necessárias para o proxy.
 - **docker-compose** - Arquivo yml que contém todas as configurações para setup da aplicação e seu ambiente.
-- 
 ### Iniciando a aplicação
 
 1 - Clonando o repositório e mudando o workspace para ele
@@ -34,19 +33,19 @@ cd docker
 ```
 2 - Iniciando a aplicação e seu ambiente com o docker-compose
 ```shell
-sudo docker-compose -d --scale app=5
+sudo docker-compose -d --scale app=2 --scale auth=2
 ```
 3 - Executando as migration dentro de um container para criar as tabelas necessárias no banco caso já não tenham sido criadas
+PS: Esses comandos só precisam ser executados 1x.
 ```shell
 sudo docker exec -it docker_app_1 php artisan migrate
+sudo docker exec -it docker_auth_1 php artisan migrate
 ```
-4 - (Opcional) populando o banco com dados
+4 - (Opcional) populando o banco com dados da aplicação de horários
 ```shell
 sudo docker exec -it docker_app_1 php artisan db:seed
 ```
-**OBS:** Será necessário criar exatamente 5 réplicas da aplicação pelo fato do proxy estar esperando exatamente 5 replicas, caso queira alterar o número de réplicas basta ir no arquivo **proxy/nginx.conf** e no *upstream app_servers* ajustar a quantidade de servidores e seus números para a quatidade de réplicas que irá utilizar.
-
-**OBS2:** Não criei imagens no Dockerhub para utilizar apenas imagens local com isso tanto a imagem do proxy quanto a imagem da aplicação serão geradas localmente assim que iniciar o ambiente e a aplicação através do *docker-compose*.
+Para que tudo funcione corretamente será necessário criar um *dns* local no arquivos de hosts do seu sistema operacional setando para o ip da maquina hoster do docker, o **dns** deverá ser exatamente esses: **api.local.com** e **local.com**, ambos devem apontar para o IP da maquina hoster do docker, caso queira alterar a quantidade de replicas e bem como o dns do proxy basta ir na pasta *proxy* e alterar no arquivo *nginx.conf* a quantidade de *worker_processes* para a quantidade de replicas que serão adicionadas no *upstream* de ambos, já para alterar o *dns* de cada basta altera o *server_name* de cada server.
 
 ### Fontes
 - Docker: https://docs.docker.com
