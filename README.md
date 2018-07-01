@@ -12,15 +12,19 @@ Neste repositório constam todos os arquivos necessários para iniciar a aplica�
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ### Mapa do repositório
-- **nginx** - Pasta contendo arquivos de configuração do nginx
-    - **default** - arquivo com as configurações necessárias para o nginx da aplicação
-- **proxy** - Pasta para a criação da imagem do *load balancing/proxy* para a aplicação.
+- **app** - Pasta que contém todos os arquivos necessários para criação da imagem da [aplicação de horários](https://github.com/jbsn94/laravel-horarioaulas.git)
+    - **.env** - Arquivos com as variáveis de ambiente para a aplicação
+    - **default** - Configurações do nginx utilizado na aplicação
+    - **Dockerfile** - Arquivo com as instruição para criação da imagem
+- **auth** - Pasta com todos os arquivos necesários para criação da imagem da [aplicação de autenticação](https://github.com/jbsn94/apiauthescolas)
+    - **.env** - Arquivos com as variáveis de ambiente para a aplicação
+    - **default** - Configurações do nginx utilizado na aplicação
+    - **Dockerfile** - Arquivo com as instruição para criação da imagem
+- **proxy** - Pasta para a criação da imagem do *load balancing/proxy* para os containers
     - **Dockerfile** - Arquivo para criação da imagem do proxy.
     - **nginx.conf** - Arquivo com as configurações necessárias para o proxy.
-- **.env** - Arquivo contendo todas as variaveis necessárias para a aplicação.
 - **docker-compose** - Arquivo yml que contém todas as configurações para setup da aplicação e seu ambiente.
-- **Dockerfile** - Arquivo responsável por gerar a imagem da aplicação em laravel utilizado no projeto
-
+- 
 ### Iniciando a aplicação
 
 1 - Clonando o repositório e mudando o workspace para ele
