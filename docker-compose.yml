@@ -13,11 +13,16 @@ services:
       MYSQL_DATABASE: escolas
     networks:
       - mysql_net
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
   app:
     depends_on:
       - mysql
+      - redis
     build:
-      context:  .
+      context:  ./app
       dockerfile: Dockerfile
     expose:
       - 80
@@ -27,16 +32,30 @@ services:
     links:
       - mysql
       - redis
-  redis:
-    image: redis
-    ports:
-      - 6379:6379
+  auth:
+    depends_on:
+      - mysql
+      - redis
+    build:
+      context:  ./auth
+      dockerfile: Dockerfile
+    expose:
+      - 80
+    restart: always
+    networks:
+      - mysql_net
+    links:
+      - mysql
+      - redis
   proxy:
     build:
       context:  ./proxy
       dockerfile: Dockerfile
     ports:
       - 80:80
+    depends_on:
+      - app
+      - auth
     links:
       - app
     networks:
