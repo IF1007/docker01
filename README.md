@@ -46,7 +46,7 @@ sudo docker exec -it docker_auth_1 php artisan migrate
 sudo docker exec -it docker_app_1 php artisan db:seed
 ```
 
-### ATENÇÂO
+### ATENÇÃO
 Como ambos os serviços estão sendo levantados em um mesmo *Docker hoster* será necessário adicionar dois **dns** em seu arquivo de hoster para o IP do *Docker hoster*, ambos os dns são: **local.com** e **api.local.com**, para ambos utilize o mesmo ip da maquina que está com o docker instalado, essa modificação é necessário para o *proxy* funcione corretamente e redirecione a requisição para o container adequado.
 
 ### Fontes
