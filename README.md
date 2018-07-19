@@ -1,4 +1,4 @@
-# Docker para a [API em laravel](https://github.com/jbsn94/laravel-horarioaulas.git)
+# Docker para a [API em laravel](https://github.com/IF1007/laravel-horarioaulas.git)
 
 Neste repositório constam todos os arquivos necessários para iniciar a aplicação e seu ambiente necessário para rodar.
 
@@ -12,11 +12,11 @@ Neste repositório constam todos os arquivos necessários para iniciar a aplica�
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ### Mapa do repositório
-- **app** - Pasta que contém todos os arquivos necessários para criação da imagem da [aplicação de horários](https://github.com/jbsn94/laravel-horarioaulas.git)
+- **app** - Pasta que contém todos os arquivos necessários para criação da imagem da [aplicação de horários](https://github.com/IF1007/laravel-horarioaulas.git)
     - **.env** - Arquivos com as variáveis de ambiente para a aplicação
     - **default** - Configurações do nginx utilizado na aplicação
     - **Dockerfile** - Arquivo com as instruição para criação da imagem
-- **auth** - Pasta com todos os arquivos necesários para criação da imagem da [aplicação de autenticação](https://github.com/jbsn94/apiauthescolas)
+- **auth** - Pasta com todos os arquivos necesários para criação da imagem da [aplicação de autenticação](https://github.com/IF1007/apiauthescolas)
     - **.env** - Arquivos com as variáveis de ambiente para a aplicação
     - **default** - Configurações do nginx utilizado na aplicação
     - **Dockerfile** - Arquivo com as instruição para criação da imagem
